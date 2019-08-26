@@ -1,0 +1,14 @@
+.banner {
+  height:150px;
+  // margin-top: 20px;
+  .swiper {
+    height:150px;
+    .swiper-item {
+      height: 150px;
+      .img {
+        width: 100%;
+        height: 150px;
+      }
+    }
+  }
+}

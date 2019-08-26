@@ -1,0 +1,50 @@
+{
+  "extends": ["taro"],
+  "rules": {
+    "no-unused-vars": ["error", { "varsIgnorePattern": "Taro" }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js",".jsx",".ts", ".tsx"] }],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "linebreak-style": [0, "windows"],//换行风格
+    "array-bracket-spacing": "warn",// 禁止在数组括号内出现空格 ['a': 12]
+    "arrow-spacing": [2, {"before": true, "after": true}], // 箭头函数使用一致空格 a => b
+    "camelcase": [2, {"properties": "always"}], // 使用驼峰式命名，常量使用下划线
+    "comma-spacing": [2, { "before": false, "after": true }], // 强制在逗号周围使用空格 a = 1, b = 3; 前面不要有空格，后面有空格
+    "eqeqeq": 2, // 要求使用 === 和 !==
+    "indent": [2, 2, {"SwitchCase": 1}], // 缩进风格，2个空格，按一次tab表示2个空格
+    "key-spacing": [2, {"beforeColon": false, "afterColon": true}],// 键值与冒号之间的空格一致性
+    "keyword-spacing": [2, {"before": true, "after": true}], // 强制关键字周围空格的一致性 } else { 'else'是关键字
+    "lines-around-comment": [2, {"beforeBlockComment": true, "allowBlockStart": true, "allowObjectStart": true, "allowArrayStart": true}], // 强制注释周围有空行
+    "no-console": 0, // 允许使用console
+    "no-empty": 1, // 禁止空块语句
+    "no-extra-semi": 1, // 警告不必要的分号
+    "no-extra-boolean-cast": 2, // 警告不必要的布尔类型转换
+    "no-redeclare": 1, // 警告重新声明变量
+    "no-spaced-func": 2, // 函数调用时函数名与()之间不能有空格
+    "no-undef": 1, // 警告没定义
+    "semi": 0, // 关闭句末添加分号
+    "semi-spacing": [2, {"before": false, "after": true}], // 强制分号周围的空格
+    "comma-dangle": [0, "never"], //对象字面量项尾不能有逗号
+    "comma-style": [2, "last"],//逗号风格，换行时在行首还是行尾
+    "no-multiple-empty-lines": [1, {"max": 2}], //空行最多不能超过2行
+    "no-nested-ternary": 1,//禁止使用嵌套的三目运算
+    "no-unreachable": 2, //不能有无法执行的代码
+    "no-unused-expressions": 2, //禁止无用的表达式
+    "no-use-before-define": 2,//未定义前不能使用
+    "no-useless-call": 2,//禁止不必要的call和apply
+    "no-var": 2,//禁用var，用let和const代替
+    "curly": [2, "all"],//必须使用 if(){} 中的{}
+    "default-case": 2,//switch语句最后必须有default
+    "prefer-const": 1,//首选const
+    "quotes": [1, "single"],//引号类型 `` "" ''
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["typescript"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "useJSXTextNode": true,
+    "project": "./tsconfig.json"
+  }
+}

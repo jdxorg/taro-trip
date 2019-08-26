@@ -1,0 +1,45 @@
+.app-logo {
+  width:100px;
+  height:80px;
+  display: flex;
+  margin: 100px auto;
+}
+.phone-btn {
+  width:400px;
+  background:#FF8E12;
+  height:60px;
+  line-height:60px;
+  color:#FFFFFF;
+  font-size:32px;
+  margin:20px auto;
+}
+.phone-btn-1 {
+  width:400px;
+  background:#19A0F1;
+  height:60px;
+  line-height:60px;
+  color:#FFFFFF;
+  font-size:32px;
+  margin:20px auto;
+}
+.wechat-btn {
+  width:200px;
+  height:100px;
+  background: transparent;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 200px;
+  .img {
+    width:100px;
+    height:100px;
+  }
+}
+.wechat-btn::after {
+  border:0;
+}
+.login-bg {
+  position:absolute;
+  top:0;
+}

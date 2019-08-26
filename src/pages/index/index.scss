@@ -1,0 +1,71 @@
+@import "~taro-ui/dist/style/components/icon.scss";
+@import '../../assets/styles/const.scss';
+
+page {
+  background: #FAFAFC;
+}
+.nav-1 {
+  border-radius:10px 10px 0 0;
+  margin: 0 20px;
+  background: #fff;
+  margin:20px 40px 0 40px;
+  box-shadow:0 -3px 5px #eee;
+  .at-grid {
+    .at-grid__flex {
+      height:120px;
+    }
+    .content-inner__img {
+      width:50px;
+      height:50px;
+    }
+    .content-inner__text {
+      font-size: 16px;
+    }
+  }
+}
+
+.nav-2 {
+  margin: 0 40px;
+  background: #FFF;
+  .at-grid {
+    .at-grid__flex {
+      height:140px;
+    }
+    .at-grid__flex:nth-child(1){
+      background: linear-gradient(to right,#FC5F56,#FFB530)
+    }
+    .at-grid__flex:nth-child(2){
+      background: linear-gradient(to right,#4E9AF2,#29C4E0)
+    }
+    .at-grid__flex:nth-child(3){
+      background: linear-gradient(to right,#28CCB4,#70D76A)
+    }
+    .content-inner__img {
+      width:50px;
+      height:50px;
+    }
+    .content-inner__text {
+      font-size: 24px;
+      color:$custom-base-white;
+    }
+  }
+}
+
+.nav-3 {
+  border-radius:0 0 10px 10px;
+  margin:0 40px;
+  background: #FFF;
+  box-shadow:0px 3px 5px #eee;
+  .at-grid {
+    .at-grid__flex {
+      height:100px;
+    }
+    .content-inner__img {
+      width:30px;
+      height:30px;
+    }
+    .content-inner__text {
+      font-size: 16px;
+    }
+  }
+}

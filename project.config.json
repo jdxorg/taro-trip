@@ -1,0 +1,47 @@
+{
+	"miniprogramRoot": "dist/",
+	"projectname": "taro-trip",
+	"description": "taro-trip",
+	"appid": "wx239c8548251fca14",
+	"setting": {
+		"urlCheck": false,
+		"es6": false,
+		"postcss": false,
+		"minified": false,
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true
+	},
+	"compileType": "miniprogram",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 0,
+			"list": [
+				{
+					"id": 0,
+					"name": "login",
+					"pathName": "packageA/pages/login/index",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

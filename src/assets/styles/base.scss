@@ -1,0 +1,14 @@
+@import './custom-variables.scss';
+@import './const.scss';
+.at-list {
+  border-radius: 10px;
+  .at-list__item {
+    font-size: $custom-base-size;
+  }
+  .at-icon-chevron-right {
+    font-size: $custom-icon-right;
+  }
+  .item-extra__info {
+    font-size: $custom-base-size;
+  }
+}

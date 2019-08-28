@@ -2,8 +2,8 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-12 15:20:20
- * @LastEditTime: 2019-08-22 15:59:37
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2019-08-27 15:27:28
+ * @LastEditors: dexiaojiang 289608944@qq.com
  */
 import Api from '../../services';
 import modelExtend from 'dva-model-extend'
@@ -27,7 +27,7 @@ export default modelExtend(model, {
       yield put({
         type: 'updateState',
         payload: {
-          data: result
+          data: result.data
         }
       })
     }

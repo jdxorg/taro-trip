@@ -12,6 +12,7 @@
  */
 export const ONLINE_HOST = 'http://api.juheapi.com'
 export const RAP_HOST = 'http://rap2api.taobao.org/app/mock/167941'
+export const ONLINE_HOST2 = 'httP://127.0.0.1:4000'
 
 /**
  * mock

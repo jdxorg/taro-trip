@@ -44,7 +44,16 @@ export default class Mine extends Taro.Component<IMineProps> {
           url:'/packageA/pages/demo/index'
         })
       },
-    ]
+    ],
+    [
+      1,
+      (): void => {
+        this.$preload('key', 'val') //传参
+        Taro.navigateTo({
+          url:'/packageTaroUI/index/index'
+        })
+      },
+    ],
   ])
 
   //预加载钩子
@@ -94,6 +103,7 @@ export default class Mine extends Taro.Component<IMineProps> {
         <View className='list'>
           <AtList hasBorder = {false}>
             <AtListItem title='Demo 分包测试' arrow='right' onClick={this.handleNavigate.bind(this,0)} />
+            <AtListItem title='Taro UI Demo' arrow='right' onClick={this.handleNavigate.bind(this,1)} />
             <AtListItem title='优惠券' arrow='right' />
             <AtListItem title='我的特权' arrow='right' />
             <AtListItem 

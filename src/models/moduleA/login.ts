@@ -7,7 +7,7 @@
  */
 import modelExtend from 'dva-model-extend'
 import { model } from '../page'
-import { setCacheDataS } from '../../utils'
+import { setCacheData } from '../../utils'
 import { CURRENT_USER_KEY } from '../../config'
 
 export default modelExtend(model, {
@@ -21,7 +21,7 @@ export default modelExtend(model, {
           user: payload.user
         }
       })
-      setCacheDataS(CURRENT_USER_KEY,payload.user)
+      setCacheData(CURRENT_USER_KEY,payload.user)
     }
   }
 }) 

@@ -2,8 +2,8 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-12 15:20:20
- * @LastEditTime: 2019-08-27 15:27:28
- * @LastEditors: dexiaojiang 289608944@qq.com
+ * @LastEditTime: 2019-09-12 11:21:55
+ * @LastEditors: 289608944@qq.com
  */
 import Api from '../../services';
 import modelExtend from 'dva-model-extend'
@@ -24,12 +24,14 @@ export default modelExtend(model, {
           ...payload
         }
       })
-      yield put({
-        type: 'updateState',
-        payload: {
-          data: result.data
-        }
-      })
+      if(result && result.data){
+        yield put({
+          type: 'updateState',
+          payload: {
+            data: result.data
+          }
+        })
+      }
     }
   }
 }) 

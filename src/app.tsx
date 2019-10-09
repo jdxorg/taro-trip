@@ -48,6 +48,17 @@ class App extends Component {
         pages:[
           'pages/demo/index',
           'pages/login/index',
+          'pages/location/index'
+        ]
+      },
+      {
+        root:'packageTaroUI',
+        pages:[
+          'index/index',
+          'Fab/index',
+          'Article/index',
+          'Countdown/index',
+          'Form/index',
         ]
       }
     ],
@@ -99,6 +110,11 @@ class App extends Component {
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'white',
       enablePullDownRefresh: true
+    },
+    permission: {
+      'scope.userLocation':{
+        'desc':'你的位置信息将用于小程序位置接口的效果展示'
+      }
     }
   }
 

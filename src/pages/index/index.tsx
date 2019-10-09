@@ -1,22 +1,24 @@
 import Taro, { Config } from '@tarojs/taro'
-import { View } from '@tarojs/components'
+import { View, Image } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
-import { AtGrid, AtSearchBar } from "taro-ui"
+import { AtGrid, AtSearchBar,AtCurtain, } from "taro-ui"
 import {JdxBanner} from '../../components/index'; 
+import { setCacheData,getCacheData } from '../../utils'
 import './index.scss'
 
 interface IIndexProps {
-  dispatch?: any,
-  data?: IDataType
+  dispatch?: any;
+  data?: IDataType;
 }
 
 interface IDataType {
-  navbars: any[],
-  banners: any[]
+  navbars: any[];
+  banners: any[];
 }
 
 interface IIndexState {
-  keywords: string
+  keywords: string;
+  isOpened: boolean;
 }
 const mainNavs = [
   {
@@ -98,6 +100,7 @@ const subMenus = [
     value:'自由行',
   },
 ]
+
 @connect(({ index,app }) => ({
   ...index,
   ...app
@@ -110,8 +113,13 @@ export default class Index extends Taro.Component<IIndexProps,IIndexState> {
     navigationBarTextStyle:'black'
   }
 
-  state = {
-    keywords:'',
+  constructor(props: any){
+    super(props)
+    const guide = getCacheData('guide')
+    this.state = {
+      keywords:'',
+      isOpened:!!guide
+    }
   }
 
   componentWillMount () { 
@@ -166,6 +174,21 @@ export default class Index extends Taro.Component<IIndexProps,IIndexState> {
             hasBorder = {false} 
           />
         </View>
+        <AtCurtain
+          isOpened={!this.state.isOpened}
+          onClose={()=> {
+            this.setState({
+              isOpened:true
+            },()=>{
+              setCacheData('guide',true)
+            })
+          }}
+        >
+          <Image
+            style='width:100%;height:250px'
+            src='https://taro-ui.jd.com/h5/static/images/curtain.png'
+          />
+        </AtCurtain>
       </View>
     );
   }

@@ -7,7 +7,7 @@
  */
 import Taro from '@tarojs/taro'
 
-export const setCacheDataS = (key: string, value: any) => {
+export const setCacheData = (key: string, value: any) => {
   Taro.setStorageSync(key, value)
 }
 

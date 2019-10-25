@@ -48,7 +48,9 @@ class App extends Component {
         pages:[
           'pages/demo/index',
           'pages/login/index',
-          'pages/location/index'
+          'pages/location/index',
+          'pages/echarts/index/index',
+          'pages/echarts/chart/index',
         ]
       },
       {
@@ -115,7 +117,7 @@ class App extends Component {
       'scope.userLocation':{
         'desc':'你的位置信息将用于小程序位置接口的效果展示'
       }
-    }
+    },
   }
 
   async componentDidMount () {

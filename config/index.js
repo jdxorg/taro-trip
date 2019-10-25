@@ -40,6 +40,11 @@ const config = {
     }
   },
   weapp: {
+    compile: {
+      exclude: [
+        'src/components/Echarts/ec-canvas/echarts.js'
+      ]
+    },
     module: {
       postcss: {
         autoprefixer: {

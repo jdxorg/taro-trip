@@ -5,6 +5,7 @@ import { AtGrid, AtSearchBar,AtCurtain, } from "taro-ui"
 import {JdxBanner} from '../../components/index'; 
 import { setCacheData,getCacheData } from '../../utils'
 import './index.scss'
+import {bannersList} from '../../assets/data/banners'
 
 interface IIndexProps {
   dispatch?: any;
@@ -136,7 +137,7 @@ export default class Index extends Taro.Component<IIndexProps,IIndexState> {
   onChange() {}
   render(){
     const { data } = this.props
-    const { banners,navbars } = data as IDataType
+    const { banners=bannersList,navbars } = data as IDataType
     const { keywords } = this.state
     const navs = navbars?navbars.map((p: any,_)=>{
       return {image:p.image,value:p.name}

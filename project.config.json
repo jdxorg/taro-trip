@@ -15,6 +15,7 @@
 	"compileType": "miniprogram",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"libVersion": "2.9.0",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -32,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 4,
 			"list": [
 				{
 					"id": 0,
@@ -60,6 +61,12 @@
 					"name": "location",
 					"pathName": "packageA/pages/location/index",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "echarts",
+					"pathName": "packageA/pages/echarts/index/index",
 					"scene": null
 				}
 			]

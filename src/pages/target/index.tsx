@@ -1,6 +1,7 @@
 import Taro, { Config } from '@tarojs/taro'
 import { View,Image,Text } from '@tarojs/components';
 import headerImg from '../../assets/images/bpic10773_s.jpg'
+import './index.scss'
 
 export default class Target extends Taro.Component {
 

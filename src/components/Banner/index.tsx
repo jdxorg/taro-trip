@@ -10,9 +10,6 @@ interface IBannerProps {
 
 export default class Banner extends Taro.Component<IBannerProps> {
 
-  constructor(props){
-    super(props)
-  }
   render(){
     const { banners = [] } = this.props
     return(

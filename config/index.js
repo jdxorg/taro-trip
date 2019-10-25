@@ -5,6 +5,7 @@
  * @LastEditTime: 2019-08-09 14:01:13
  * @LastEditors: Please set LastEditors
  */
+const path = require('path')
 const config = {
   projectName: 'taro-trip',
   date: '2019-8-9',
@@ -38,6 +39,11 @@ const config = {
     ],
     options: {
     }
+  },
+  alias: {
+    '@/components': path.resolve(__dirname, '..', 'src/components'),
+    '@/utils': path.resolve(__dirname, '..', 'src/utils'),
+    '@/assets': path.resolve(__dirname, '..', 'src/assets')
   },
   weapp: {
     compile: {

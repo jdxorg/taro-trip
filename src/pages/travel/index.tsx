@@ -1,135 +1,137 @@
 import Taro, { Config } from '@tarojs/taro'
-import { View,Video,Button,Input,Image } from '@tarojs/components';
-import hongbao from '../../assets/images/hongbao.jpg'
-import globalData from '../../utils/store';
+import { View,Map  } from '@tarojs/components';
+import markerIcon from '@/assets/images/icons/pictorialbar.png'
+import pieIcon from '@/assets/images/icons/pie.png'
 
-let videoContext = null
 export default class Travel extends Taro.Component {
 
   config: Config = {
     navigationBarTitleText:'行程',
   }
-
-  state={
-    src:'http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400',
-    inputValue:'',
-    danmuList:[
+  constructor(props: any){
+    super(props)
+    this.onClick.bind(this)
+    this.onMarkerTap.bind(this)
+    this.onLabelTap.bind(this)
+    this.onControlTap.bind(this)
+    this.onCalloutTap.bind(this)
+    this.onUpdated.bind(this)
+    this.onRegionChange.bind(this)
+  }
+  state = {
+    markers:[
       {
-        text: '第 1s 出现的弹幕',
-        color: '#ff0000',
-        time: 1
-      },
-      {
-        text: '第 3s 出现的弹幕',
-        color: '#ff00ff',
-        time: 3
-    }],
-    animationData:[]
-  }
-
-  componentDidMount(){
-    videoContext = Taro.createVideoContext('myVideo')
-    var animation = Taro.createAnimation({
-      duration: 1000,
-      timingFunction: 'ease',
-    })
-    this.animation = animation
-    console.log('Travel componentDidMount',globalData.systemInfo)
-  }
-  getRandomColor () {
-    let rgb = []
-    for (let i = 0 ; i < 3; ++i){
-      let color = Math.floor(Math.random() * 256).toString(16)
-      color = color.length == 1 ? '0' + color : color
-      rgb.push(color)
-    }
-    return '#' + rgb.join('')
-  }
-
-  sendDanMu(){
-    console.log('danmu',this.state.inputValue)
-    if(videoContext){
-      videoContext.sendDanmu({
-        text:this.state.inputValue,
-        color:this.getRandomColor()
-      })
-    }
-  }
-
-  chooseVideo(){
-    Taro.chooseVideo({
-      sourceType:['album','camera'],
-      maxDuration:120,
-      camera:['front','back'],
-      success:(res: any)=>{
-        this.setState({
-          src:res.tempFilePath
-        })
+        iconPath: markerIcon,
+        id: 0,
+        latitude: 23.099994,
+        longitude: 113.324520,
+        width: 50,
+        height: 50,
+        title:'测试标注点',
+        callout:{
+          content:'我是标注点气泡content文本',
+          color:'#EE2C2C',
+          borderColor:'#FFA500',
+          bgColor:'#CDCD00',
+          display:'ALWAYS',
+          borderRadius:20,
+          borderWidth:2,
+          padding:5,
+          textAlign:'center'
+        },
+        label:{
+          content:'我是气泡上的label',
+          color:'#9A32CD',
+          borderColor:'#B3EE3A',
+          bgColor:'#8EE5EE',
+          borderWidth:2,
+          borderRadius:20,
+          padding:5,
+          textAlign:'center'
+        }
       }
-    })
+    ],
+    polyline:[{
+      points: [{
+        longitude: 113.3245211,
+        latitude: 23.10229
+      }, {
+        longitude: 113.324520,
+        latitude: 23.21229
+      }],
+      color:"#8A2BE2",
+      width: 2,
+      dottedLine: true
+    }],
+    controls:[{
+      id: 1,
+      iconPath: pieIcon,
+      position: {
+        left: 0,
+        top: 300 - 50,
+        width: 50,
+        height: 50
+      },
+      clickable: true
+    }],
+    circle:[{
+      longitude: 113.327621,
+      latitude: 23.099994,
+      color:'#006400',
+      fillColor:'#CD0000',
+      radius:20,
+      strokeWidth:5
+    }]
   }
-
-  onInput(e){
-    this.setState({
-      inputValue:e.detail.value
-    })
+  onClick(e){
+    console.log('onClick',e)
   }
-
-  onFullscreenChange(event){
-    console.log('onFullscreenChange',event)
+  onMarkerTap(e){
+    console.log('onMarkerTap',e)
   }
-
-  onHongBaoClick(){
-    console.log('onHongBaoClick')
-    this.animation.opacity(0).step()
-    this.setState({
-      animationData:this.animation.export()
-    })
+  onLabelTap(e){
+    console.log('onLabelTap',e)
   }
-  onShowHongBao(){
-    const screenWidth = globalData.systemInfo?globalData.systemInfo.screenWidth:375
-    this.animation.translateX((screenWidth+90)/2).rotate(360).step({ duration:1000 })
-    this.setState({
-      animationData:this.animation.export()
-    })
+  onControlTap(e){
+    console.log('onControlTap',e)
+  }
+  onCalloutTap(e){
+    console.log('onCalloutTap',e)
+  }
+  onUpdated(e){
+    console.log('onUpdated 地图渲染更新完成',e)
+  }
+  onRegionChange(e){
+    console.log('onRegionChange 视野发生变化时触发',e)
   }
   render(){
-    const screenWidth = globalData.systemInfo?globalData.systemInfo.screenWidth:375
+    const { markers,polyline,controls,circle }: any = this.state
     return (
       <View>
-        <Video 
-          id="myVideo"
-          src={this.state.src}
-          enable-danmu 
-          danmu-btn
-          controls
-          autoplay
-          show-mute-btn={true}
-          enable-play-gesture
-          danmu-list={this.state.danmuList}
-          style={{width:'100%'}}
-          onFullscreenChange={this.onFullscreenChange.bind(this)}
-         ></Video>
-         <Input onInput={this.onInput.bind(this)} focus={true} placeholder="弹幕内容" />
-         <Button onClick={this.sendDanMu.bind(this)}>发送弹幕</Button>
-         <Button onClick={this.chooseVideo.bind(this)}>选择视频</Button>
-         <Button onClick={this.onShowHongBao.bind(this)}>视频红包</Button>
-         <Image 
-            src={hongbao} 
-            mode="scaleToFill" 
-            onClick={this.onHongBaoClick.bind(this)}
-            style={{
-              width:'90px',
-              height:'90px',
-              position:'absolute',
-              top:'70px',
-              left:`${-screenWidth-90}px`,
-              right:0,
-              margin:'0 auto',
-            }} 
-            animation={this.state.animationData}
-          >
-         </Image>
+        <Map
+          longitude={113.324520}
+          latitude={23.099994}
+          scale={16} //缩放级别 3-20
+          show-location={true} //显示带有方向的当前定位点 默认false
+          markers={markers} //标记点
+          polyline={polyline} //路线
+          controls={controls} //圆
+          circles={circle}
+          // include-points={[]} //缩放视野以包含所有给定的坐标点
+          // enable-overlooking={true} //是否开启俯视 默认false
+          // enable-rotate={true} //是否支持旋转 默认 false
+          // enable-satellite={true} //是否开启卫星图
+          // show-compass={true} //显示指南针 默认false
+          // enable-traffic={true} //是否开启实时路况 默认false
+          
+          onClick={this.onClick}
+          onMarkerTap={this.onMarkerTap}
+          onControlTap={this.onControlTap}
+          onCalloutTap={this.onCalloutTap}
+          onUpdated={this.onUpdated}
+          onRegionChange={this.onRegionChange}
+          style={{width:'100vw',height:'100vh'}}
+        ></Map>
       </View>
     );
   }

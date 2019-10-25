@@ -2,10 +2,10 @@ import Taro, { Config } from '@tarojs/taro'
 import { View, Image } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import { AtGrid, AtSearchBar,AtCurtain, } from "taro-ui"
-import {JdxBanner} from '../../components/index'; 
-import { setCacheData,getCacheData } from '../../utils'
+import {JdxBanner} from '@/components/index'; 
+import { setCacheData,getCacheData } from '@/utils'
+import {bannersList} from '@/assets/data/banners'
 import './index.scss'
-import {bannersList} from '../../assets/data/banners'
 
 interface IIndexProps {
   dispatch?: any;

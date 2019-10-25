@@ -1,5 +1,5 @@
 import Taro,{Config} from '@tarojs/taro'
-import Echart,{EchartType,IEchartType,EchartEnum} from '../../../../components/Echarts'
+import Echart,{EchartType,IEchartType,EchartEnum} from '@/components/Echarts'
 
 interface IState {
   type:string;

@@ -51,6 +51,7 @@ class App extends Component {
           'pages/location/index',
           'pages/echarts/index/index',
           'pages/echarts/chart/index',
+          'pages/video/index',
         ]
       },
       {
@@ -61,6 +62,7 @@ class App extends Component {
           'Article/index',
           'Countdown/index',
           'Form/index',
+          'RichText/index',
         ]
       }
     ],

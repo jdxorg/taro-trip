@@ -14,6 +14,7 @@ export default class TaroUiIndex extends Taro.Component<any> {
         <AtListItem title='Article 文章样式' arrow='right' onClick={()=> Taro.navigateTo({url:'/packageTaroUI/Article/index'})} />
         <AtListItem title='Countdown 倒计时' arrow='right' onClick={()=> Taro.navigateTo({url:'/packageTaroUI/Countdown/index'})} />
         <AtListItem title='Form 表单' arrow='right' onClick={()=> Taro.navigateTo({url:'/packageTaroUI/Form/index'})} />
+        <AtListItem title='RichText 富文本' arrow='right' onClick={()=> Taro.navigateTo({url:'/packageTaroUI/RichText/index'})} />
       </AtList>
     )
   }

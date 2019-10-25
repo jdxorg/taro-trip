@@ -3,7 +3,7 @@ import { connect } from '@tarojs/redux'
 import { View, Image, Text, Button  } from '@tarojs/components';
 import { AtGrid, AtList, AtListItem, AtAvatar, AtIcon } from "taro-ui"
 import './index.scss'
-import userDefaultLogo from '../../assets/images/user-logo.png'
+import userDefaultLogo from '@/assets/images/user-logo.png'
 
 interface IMineProps {
   user?: any
@@ -63,6 +63,15 @@ export default class Mine extends Taro.Component<IMineProps> {
         })
       },
     ],
+    [
+      3,
+      (): void => {
+        this.$preload('key', 'val') //传参
+        Taro.navigateTo({
+          url:'/packageA/pages/video/index'
+        })
+      },
+    ],
   ])
 
   //预加载钩子
@@ -114,6 +123,7 @@ export default class Mine extends Taro.Component<IMineProps> {
             <AtListItem title='Demo 分包测试' arrow='right' onClick={this.handleNavigate.bind(this,0)} />
             <AtListItem title='Taro UI Demo' arrow='right' onClick={this.handleNavigate.bind(this,1)} />
             <AtListItem title='echarts 图表' arrow='right' onClick={this.handleNavigate.bind(this,2)} />
+            <AtListItem title='video' arrow='right' onClick={this.handleNavigate.bind(this,3)} />
             <AtListItem title='优惠券' arrow='right' />
             <AtListItem title='我的特权' arrow='right' />
             <AtListItem 

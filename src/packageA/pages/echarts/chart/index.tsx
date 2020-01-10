@@ -1,17 +1,17 @@
-import Taro,{Config} from '@tarojs/taro'
-import Echart,{EchartType,IEchartType,EchartEnum} from '@/components/Echarts'
+import Taro, {Config} from '@tarojs/taro'
+import Echart, {EchartType, IEchartType, EchartEnum} from '@/components/Echarts'
 
 interface IState {
   type:string;
 }
 
-export default class Bar extends Taro.Component<{},IState> {
+export default class Bar extends Taro.Component<{}, IState> {
   config: Config = {
-    navigationBarTitleText:'',
+    navigationBarTitleText: '',
   }
 
   componentWillMount(){
-    const {type,title} = this.$router.params
+    const {type, title} = this.$router.params
     Taro.setNavigationBarTitle({ title })
     this.setState({ type })
   }
@@ -19,7 +19,7 @@ export default class Bar extends Taro.Component<{},IState> {
   componentDidMount(){
     const {type} = this.$router.params
     let data: any = null
-    switch(type){
+    switch (type){
       case EchartEnum.bar: 
         data = {
           yAxis: [
@@ -38,13 +38,13 @@ export default class Bar extends Taro.Component<{},IState> {
             }
           ],
         };
-      break;
+        break;
     }
-    this.Chart.echartInit(data,type===EchartEnum.map?'henan':null)
+    this.Chart.echartInit(data, type===EchartEnum.map?'henan':null)
   }
 
   render(){
-    let type: EchartType = this.state.type as EchartType
-    return <Echart type={type} ref={(node: any) =>(this.Chart = node)} />
+    const type: EchartType = this.state.type as EchartType
+    return <Echart type={type} ref={(node: any) => (this.Chart = node)} />
   }
 }

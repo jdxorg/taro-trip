@@ -1,10 +1,10 @@
 /**
  * 散点图
  */
-var data = [];
-var data2 = [];
+const data = [];
+const data2 = [];
 
-for (var i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) {
   data.push(
     [
       Math.round(Math.random() * 100),
@@ -21,7 +21,7 @@ for (var i = 0; i < 10; i++) {
   );
 }
 
-var axisCommon = {
+const axisCommon = {
   axisLabel: {
     textStyle: {
       color: '#C8C8C8'
@@ -45,8 +45,8 @@ var axisCommon = {
   }
 };
 
-var option = {
-  color: ["#FF7070", "#60B6E3"],
+const option = {
+  color: ['#FF7070', '#60B6E3'],
   backgroundColor: '#eee',
   xAxis: axisCommon,
   yAxis: axisCommon,

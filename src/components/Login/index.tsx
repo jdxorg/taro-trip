@@ -6,32 +6,32 @@ interface ILoginState {
   username?: string,
   code?: string
 }
-export default class LoginForm extends Taro.Component<{},ILoginState> {
+export default class LoginForm extends Taro.Component<{}, ILoginState> {
 
   state = {
-    username:'',
-    code:''
+    username: '',
+    code: ''
   }
 
   onSubmit(event) {
-    console.log('onSubmit',this.state)
+    console.log('onSubmit', this.state)
   }
 
   usernameOnChange(value) {
     this.setState({
-      username:value
+      username: value
     })
   }
   codeOnChange(value) {
     this.setState({
-      code:value
+      code: value
     })
   }
   render(){
     const { username, code } = this.state
     return (
-      <View className="login-form" >
-        <AtForm onSubmit={this.onSubmit.bind(this)} reportSubmit={true} >
+      <View className='login-form' >
+        <AtForm onSubmit={this.onSubmit.bind(this)} reportSubmit >
           <AtInput 
             name='username'
             placeholder='请输入手机号' 

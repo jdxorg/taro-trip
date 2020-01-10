@@ -23,7 +23,7 @@ export default modelExtend(model, {
       const { key, v } = yield select(state => state.demo )
 
       const { error, result } = yield call(getLists, { 
-        data:{
+        data: {
           key,
           v,
           ...payload

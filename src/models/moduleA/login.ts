@@ -21,7 +21,7 @@ export default modelExtend(model, {
           user: payload.user
         }
       })
-      setCacheData(CURRENT_USER_KEY,payload.user)
+      setCacheData(CURRENT_USER_KEY, payload.user)
     }
   }
 }) 

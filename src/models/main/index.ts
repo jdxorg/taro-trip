@@ -19,12 +19,12 @@ export default modelExtend(model, {
   effects: {
     * getHome({ payload }, { call, put }) {
       const result = yield call(getHome, { 
-        data:{
-          key:'mini',
+        data: {
+          key: 'mini',
           ...payload
         }
       })
-      if(result && result.data){
+      if (result && result.data){
         yield put({
           type: 'updateState',
           payload: {

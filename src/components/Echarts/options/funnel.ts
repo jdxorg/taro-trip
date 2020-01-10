@@ -2,11 +2,11 @@
  * 漏斗图
  */
 const option = {
-  backgroundColor: "#ffffff",
-  color: ["#37A2DA", "#32C5E9", "#67E0E3", "#91F2DE", "#FFDB5C", "#FF9F7F"],
+  backgroundColor: '#ffffff',
+  color: ['#37A2DA', '#32C5E9', '#67E0E3', '#91F2DE', '#FFDB5C', '#FF9F7F'],
   tooltip: {
     trigger: 'item',
-    formatter: "{a} <br/>{b} : {c}%"
+    formatter: '{a} <br/>{b} : {c}%'
   },
   legend: {
     orient: 'vertical',
@@ -23,10 +23,10 @@ const option = {
       left: '5%',
       top: '50%',
       data: [{ value: 100, name: '展现' },
-      { value: 80, name: '点击' },
-      { value: 60, name: '访问' },
-      { value: 30, name: '咨询' },
-      { value: 10, name: '订单' },
+        { value: 80, name: '点击' },
+        { value: 60, name: '访问' },
+        { value: 30, name: '咨询' },
+        { value: 10, name: '订单' },
 
       ]
     },

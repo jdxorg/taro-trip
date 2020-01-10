@@ -12,7 +12,7 @@ import { CURRENT_USER_KEY } from '../config'
 
 const loginer = getCacheData(CURRENT_USER_KEY)
 
-export default modelExtend(model,{
+export default modelExtend(model, {
   namespace: 'app',
   state: {
     global: {},

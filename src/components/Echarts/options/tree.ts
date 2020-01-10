@@ -1,41 +1,41 @@
-var data1 = {
-  "name": "root",
-  "children": [{
-    "name": "a",
-    "children": [{
-      "name": "a1"
+const data1 = {
+  'name': 'root',
+  'children': [{
+    'name': 'a',
+    'children': [{
+      'name': 'a1'
     }, {
-      "name": "a2"
+      'name': 'a2'
     }, {
-      "name": "a3"
+      'name': 'a3'
     }, {
-      "name": "a4"
+      'name': 'a4'
     }]
   }, {
-    "name": "b",
-    "children": [{
-      "name": "b1"
+    'name': 'b',
+    'children': [{
+      'name': 'b1'
     }, {
-      "name": "b2"
+      'name': 'b2'
     }, {
-      "name": "b3"
+      'name': 'b3'
     }, {
-      "name": "b4"
+      'name': 'b4'
     }]
   }, {
-    "name": "c",
-    "children": [{
-      "name": "c1"
+    'name': 'c',
+    'children': [{
+      'name': 'c1'
     }]
   }, {
-    "name": "d",
-    "children": [{
-      "name": "d1"
+    'name': 'd',
+    'children': [{
+      'name': 'd1'
     }]
   }]
 };
 
-var option = {
+const option = {
   series: [{
     type: 'tree',
 

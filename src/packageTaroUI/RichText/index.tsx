@@ -1,5 +1,5 @@
-import Taro,{Config,useState} from '@tarojs/taro'
-import { View,RichText } from '@tarojs/components'
+import Taro, {Config, useState} from '@tarojs/taro'
+import { View, RichText } from '@tarojs/components'
 
 const RichTextPage: Taro.FC<any> = props => {
   
@@ -22,7 +22,7 @@ const RichTextPage: Taro.FC<any> = props => {
   )
 }
 RichTextPage.config = {
-  navigationBarTitleText:'RichText'
+  navigationBarTitleText: 'RichText'
 }
 export default RichTextPage
 

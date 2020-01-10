@@ -1,14 +1,14 @@
-var item1 = {
+const item1 = {
   color: '#F54F4A'
 };
-var item2 = {
+const item2 = {
   color: '#FF8C75'
 };
-var item3 = {
+const item3 = {
   color: '#FFB499'
 };
 
-var data = [{
+const data = [{
   children: [{
     value: 5,
     children: [{
@@ -95,7 +95,7 @@ var data = [{
   itemStyle: item1
 }];
 
-var option = {
+const option = {
   series: {
     radius: ['15%', '80%'],
     type: 'sunburst',

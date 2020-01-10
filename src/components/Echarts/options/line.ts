@@ -6,7 +6,7 @@ const option = {
     text: '测试下面legend的红色区域不应被裁剪',
     left: 'center'
   },
-  color: ["#37A2DA", "#67E0E3", "#9FE6B8"],
+  color: ['#37A2DA', '#67E0E3', '#9FE6B8'],
   legend: {
     data: ['A', 'B', 'C'],
     top: 50,

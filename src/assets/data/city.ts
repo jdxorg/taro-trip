@@ -9,16 +9,16 @@ export const cityList = [{
     {
       'name': '阿拉善'
     }]
-  },
-  {
-    title: 'B',
-    key: 'B',
-    items: [
-      {
-        'name': '北京'
-      },
-      {
-        'name': '保定'
-      }]
-  }
+},
+{
+  title: 'B',
+  key: 'B',
+  items: [
+    {
+      'name': '北京'
+    },
+    {
+      'name': '保定'
+    }]
+}
 ]

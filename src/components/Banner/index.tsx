@@ -12,7 +12,7 @@ export default class Banner extends Taro.Component<IBannerProps> {
 
   render(){
     const { banners = [] } = this.props
-    return(
+    return (
       <View className='banner' >
         <Swiper
           className='swiper'
@@ -20,18 +20,19 @@ export default class Banner extends Taro.Component<IBannerProps> {
           indicatorActiveColor='#333'
           circular
           indicatorDots
-          autoplay>
-            {
-              banners.map((p: any,_)=>{
-                return (
-                  <SwiperItem key={_.toString()} >
-                    <View className='swiper-item'>
-                      <Image className="img"  src={p.image} />
-                    </View>
-                  </SwiperItem>
-                )
-              })
-            }
+          autoplay
+        >
+          {
+            banners.map((p: any, _) => {
+              return (
+                <SwiperItem key={_.toString()} >
+                  <View className='swiper-item'>
+                    <Image className='img'  src={p.image} />
+                  </View>
+                </SwiperItem>
+              )
+            })
+          }
         </Swiper>
       </View>
     );

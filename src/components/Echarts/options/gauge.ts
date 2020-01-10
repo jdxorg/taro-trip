@@ -2,8 +2,8 @@
  * 仪表盘
  */
 const option = {
-  backgroundColor: "#ffffff",
-  color: ["#37A2DA", "#32C5E9", "#67E0E3"],
+  backgroundColor: '#ffffff',
+  color: ['#37A2DA', '#32C5E9', '#67E0E3'],
   series: [{
     name: '业务指标',
     type: 'gauge',

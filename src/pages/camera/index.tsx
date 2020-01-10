@@ -4,11 +4,11 @@ import { WebView } from '@tarojs/components';
 export default class Camera extends Taro.Component {
 
   config: Config = {
-    navigationBarTitleText:'旅拍',
+    navigationBarTitleText: '旅拍',
   }
 
   onShareAppMessage = (options: any) => {
-    console.log('onShareAppMessage',options)
+    console.log('onShareAppMessage', options)
   }
   
   render(){
@@ -17,17 +17,17 @@ export default class Camera extends Taro.Component {
         src='https://developers.weixin.qq.com/miniprogram/dev/component/web-view.html' 
         onMessage={
           (event: any) => {
-            console.log('onMessage',event)
+            console.log('onMessage', event)
           }
         }
         onLoad={
           (event: any) => {
-            console.log('onLoad',event)
+            console.log('onLoad', event)
           }
         }
         onError={
           (event: any) => {
-            console.log('onError',event)
+            console.log('onError', event)
           }
         }
       />

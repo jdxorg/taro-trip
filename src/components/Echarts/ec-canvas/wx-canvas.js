@@ -47,7 +47,7 @@ export default class WxCanvas {
   }
 
   _initStyle(ctx) {
-    var styles = ['fillStyle', 'strokeStyle', 'globalAlpha', 
+    const styles = ['fillStyle', 'strokeStyle', 'globalAlpha', 
       'textAlign', 'textBaseAlign', 'shadow', 'lineWidth',
       'lineCap', 'lineJoin', 'lineDash', 'miterLimit', 'fontSize'];
 

@@ -1,4 +1,4 @@
-var option = {
+const option = {
   color: ['#37a2da'],
   parallelAxis: [
     { dim: 0, name: 'Price' },

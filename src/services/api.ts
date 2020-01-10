@@ -5,7 +5,7 @@
  * @LastEditTime: 2019-08-27 15:22:18
  * @LastEditors: dexiaojiang 289608944@qq.com
  */
-import {ONLINE_HOST, ONLINE_HOST2, MOCK_HOST,RAP_HOST, ISMOCK} from '../config'
+import {ONLINE_HOST, ONLINE_HOST2, MOCK_HOST, RAP_HOST, ISMOCK} from '../config'
 
 const MAIN_HOST = ISMOCK?MOCK_HOST:ONLINE_HOST
 

@@ -51,7 +51,7 @@ Component({
         return canvas;
       });
       
-      var query = wx.createSelectorQuery().in(this);
+      const query = wx.createSelectorQuery().in(this);
       query.select('.ec-canvas').boundingClientRect(res => {
         if (typeof callback === 'function') {
           this.chart = callback(canvas, res.width, res.height);
@@ -82,8 +82,8 @@ Component({
 
     touchStart(e) {
       if (this.chart && e.touches.length > 0) {
-        var touch = e.touches[0];
-        var handler = this.chart.getZr().handler;
+        const touch = e.touches[0];
+        const handler = this.chart.getZr().handler;
         handler.dispatch('mousedown', {
           zrX: touch.x,
           zrY: touch.y
@@ -98,8 +98,8 @@ Component({
 
     touchMove(e) {
       if (this.chart && e.touches.length > 0) {
-        var touch = e.touches[0];
-        var handler = this.chart.getZr().handler;
+        const touch = e.touches[0];
+        const handler = this.chart.getZr().handler;
         handler.dispatch('mousemove', {
           zrX: touch.x,
           zrY: touch.y
@@ -111,7 +111,7 @@ Component({
     touchEnd(e) {
       if (this.chart) {
         const touch = e.changedTouches ? e.changedTouches[0] : {};
-        var handler = this.chart.getZr().handler;
+        const handler = this.chart.getZr().handler;
         handler.dispatch('mouseup', {
           zrX: touch.x,
           zrY: touch.y

@@ -1,7 +1,7 @@
 import Taro, { Config } from '@tarojs/taro'
 import { connect } from '@tarojs/redux';
-import { View, Image,Button } from '@tarojs/components';
-import { AtButton,AtModal,AtModalContent  } from 'taro-ui'
+import { View, Image, Button } from '@tarojs/components';
+import { AtButton, AtModal, AtModalContent  } from 'taro-ui'
 import { JdxLogin } from '../../../components'
 import globalData from '../../../utils/store';
 import appLogo from '../../../assets/images/logo.png'
@@ -20,10 +20,10 @@ interface ILoginState {
 @connect(({ loginModel }) => ({
   ...loginModel,
 }))
-export default class Login extends Taro.Component<ILoginProps,ILoginState> {
+export default class Login extends Taro.Component<ILoginProps, ILoginState> {
 
   config: Config = {
-    navigationBarTitleText:'会员登录',
+    navigationBarTitleText: '会员登录',
   }
 
   handleOtherPhone() {
@@ -32,11 +32,12 @@ export default class Login extends Taro.Component<ILoginProps,ILoginState> {
     })
   }
   async onGetPhoneNumber(event){console.log(event)
-    if(event.detail.errMsg !== 'getPhoneNumber:ok') return
+    if (event.detail.errMsg !== 'getPhoneNumber:ok') {return}
     try {
       const session = await Taro.checkSession()
     } catch (error) {
       const res = await Taro.login()
+
       /**
        * 登录过程： 
       1、发起code到 第三方服务器 
@@ -49,10 +50,10 @@ export default class Login extends Taro.Component<ILoginProps,ILoginState> {
     }
     const { dispatch } = this.props
     dispatch({
-      type:'loginModel/login',
-      payload:{
-        user:{
-          phone:'1111111'
+      type: 'loginModel/login',
+      payload: {
+        user: {
+          phone: '1111111'
         }
       }
     }).then(() => {
@@ -63,8 +64,8 @@ export default class Login extends Taro.Component<ILoginProps,ILoginState> {
     const user = event.detail.userInfo
     const { dispatch } = this.props
     dispatch({
-      type:'loginModel/login',
-      payload:{
+      type: 'loginModel/login',
+      payload: {
         user
       }
     }).then(() => {
@@ -75,19 +76,21 @@ export default class Login extends Taro.Component<ILoginProps,ILoginState> {
     const { loginType = 0 } = this.state
     const { windowWidth = 375, screenHeight = 667, statusBarHeight =20 } = globalData.systemInfo||{}
     return (
-      <View className="login-form" >
-        <Image src={loginBackground} className='login-bg' style={{width:`${windowWidth}px`,height:`${screenHeight-statusBarHeight-44}px`}} />
+      <View className='login-form' >
+        <Image src={loginBackground} className='login-bg' style={{width: `${windowWidth}px`, height: `${screenHeight-statusBarHeight-44}px`}} />
         <Image src={appLogo} className='app-logo' />
         <Button 
           className='phone-btn'
           openType='getPhoneNumber'
-          onGetPhoneNumber={this.onGetPhoneNumber.bind(this)}>
+          onGetPhoneNumber={this.onGetPhoneNumber.bind(this)}
+        >
           手机号一键登录
         </Button>
         
         <Button 
           className='phone-btn-1'
-          onClick={this.handleOtherPhone.bind(this)}>
+          onClick={this.handleOtherPhone.bind(this)}
+        >
           其他手机号登录
         </Button>
         <Button
@@ -97,7 +100,7 @@ export default class Login extends Taro.Component<ILoginProps,ILoginState> {
         >
           <Image className='img' src={wechat} />
         </Button>
-        <AtModal isOpened = {loginType===1}>
+        <AtModal isOpened={loginType===1}>
           <AtModalContent>
             <JdxLogin />
           </AtModalContent>

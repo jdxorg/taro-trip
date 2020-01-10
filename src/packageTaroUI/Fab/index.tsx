@@ -1,12 +1,12 @@
 import Taro from '@tarojs/taro'
 import { AtFab } from 'taro-ui'
-import { View,Text } from '@tarojs/components'
+import { View, Text } from '@tarojs/components'
 import './index.scss'
 
 const Fab: Taro.FC<any> = props => {
   
   return (
-    <View style={{position:'fixed',margin:'20px'}}>
+    <View style={{position: 'fixed', margin: '20px'}}>
       <AtFab 
         size='small'
       >

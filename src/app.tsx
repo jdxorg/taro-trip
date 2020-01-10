@@ -42,10 +42,10 @@ class App extends Component {
       'pages/travel/index',
       'pages/mine/index',
     ],
-    subPackages:[
+    subPackages: [
       {
-        root:'packageA',
-        pages:[
+        root: 'packageA',
+        pages: [
           'pages/demo/index',
           'pages/login/index',
           'pages/location/index',
@@ -55,8 +55,8 @@ class App extends Component {
         ]
       },
       {
-        root:'packageTaroUI',
-        pages:[
+        root: 'packageTaroUI',
+        pages: [
           'index/index',
           'Fab/index',
           'Article/index',
@@ -66,45 +66,45 @@ class App extends Component {
         ]
       }
     ],
-    preloadRule:{
-      'pages/index/index':{
-        'network':'all',
-        'packages':['packageA']
+    preloadRule: {
+      'pages/index/index': {
+        'network': 'all',
+        'packages': ['packageA']
       }
     },
-    tabBar:{
-      color:'#bfbfbf',
-      selectedColor:'#1296db',
+    tabBar: {
+      color: '#bfbfbf',
+      selectedColor: '#1296db',
       list: [
         {
-          pagePath: "pages/index/index",
-          text: "首页",
-          iconPath: "assets/images/home.png",
-          selectedIconPath: "assets/images/home-select.png"
+          pagePath: 'pages/index/index',
+          text: '首页',
+          iconPath: 'assets/images/home.png',
+          selectedIconPath: 'assets/images/home-select.png'
         },
         {
-          pagePath: "pages/target/index",
-          text: "目的地",
-          iconPath: "assets/images/target.png",
-          selectedIconPath: "assets/images/target-select.png"
+          pagePath: 'pages/target/index',
+          text: '目的地',
+          iconPath: 'assets/images/target.png',
+          selectedIconPath: 'assets/images/target-select.png'
         },
         {
-          pagePath: "pages/camera/index",
-          text: "旅拍",
-          iconPath: "assets/images/camera.png",
-          selectedIconPath: "assets/images/camera-select.png"
+          pagePath: 'pages/camera/index',
+          text: '旅拍',
+          iconPath: 'assets/images/camera.png',
+          selectedIconPath: 'assets/images/camera-select.png'
         },
         {
-          pagePath: "pages/travel/index",
-          text: "行程",
-          iconPath: "assets/images/travel.png",
-          selectedIconPath: "assets/images/travel-select.png"
+          pagePath: 'pages/travel/index',
+          text: '行程',
+          iconPath: 'assets/images/travel.png',
+          selectedIconPath: 'assets/images/travel-select.png'
         },
         {
-          pagePath: "pages/mine/index",
-          text: "我的",
-          iconPath: "assets/images/mine.png",
-          selectedIconPath: "assets/images/mine-select.png"
+          pagePath: 'pages/mine/index',
+          text: '我的',
+          iconPath: 'assets/images/mine.png',
+          selectedIconPath: 'assets/images/mine-select.png'
         }
       ]
     },
@@ -116,8 +116,8 @@ class App extends Component {
       enablePullDownRefresh: true
     },
     permission: {
-      'scope.userLocation':{
-        'desc':'你的位置信息将用于小程序位置接口的效果展示'
+      'scope.userLocation': {
+        'desc': '你的位置信息将用于小程序位置接口的效果展示'
       }
     },
   }
@@ -142,7 +142,7 @@ class App extends Component {
     // 获取设备信息
     const sys = await Taro.getSystemInfo();
     sys && (globalData.systemInfo = sys);
-    console.log('sys',sys)
+    console.log('sys', sys)
     // 获取网络信息
     const net = await Taro.getNetworkType()
     store.dispatch({
@@ -173,7 +173,7 @@ class App extends Component {
    */
   componentDidCatchError (error) {
 
-    console.log('componentDidCatchError',error)
+    console.log('componentDidCatchError', error)
   }
 
   // 在 App 类中的 render() 函数没有实际作用

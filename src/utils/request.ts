@@ -35,7 +35,7 @@ export default class Request {
       let domain = '';
       const urlMatch = url.match(/[a-zA-z]+:\/\/[^/]*/);
       if (urlMatch) {
-        ;[domain] = urlMatch;
+        [domain] = urlMatch;
         url = url.slice(domain.length);
       }
   
@@ -55,7 +55,7 @@ export default class Request {
       data: {...cloneData },
       method: opts.method || reqOpt.method || 'GET',
       url: `${url}`,
-      header:reqOpt.header||{}
+      header: reqOpt.header||{}
     }
   }
 

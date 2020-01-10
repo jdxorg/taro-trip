@@ -1,5 +1,5 @@
 import Taro from '@tarojs/taro'
-import { View,Image } from '@tarojs/components'
+import { View, Image } from '@tarojs/components'
 
 const Article: Taro.FC<any> = props => {
   
@@ -24,7 +24,8 @@ const Article: Taro.FC<any> = props => {
           <Image 
             className='at-article__img' 
             src='https://jdc.jd.com/img/400x400' 
-            mode='widthFix' />
+            mode='widthFix'
+          />
         </View>
       </View>
     </View>

@@ -32,75 +32,75 @@ class Echarts extends Taro.Component<{}>{
       {
         id: 'bar',
         name: '柱状图',
-        img:bar
+        img: bar
       }, {
         id: 'scatter',
         name: '散点图',
-        img:scatter
+        img: scatter
       }, {
         id: 'pie',
         name: '饼图',
-        img:pie
+        img: pie
       }, {
         id: 'line',
         name: '折线图',
-        img:line
+        img: line
       }, {
         id: 'funnel',
         name: '漏斗图',
-        img:funnel
+        img: funnel
       }, {
         id: 'gauge',
         name: '仪表盘',
-        img:gauge
+        img: gauge
       }, {
         id: 'k',
         name: 'K 线图',
-        img:k
+        img: k
       }, {
         id: 'radar',
         name: '雷达图',
-        img:radar
+        img: radar
       }, {
         id: 'heatmap',
         name: '热力图',
-        img:heatmap
+        img: heatmap
       }, {
         id: 'tree',
         name: '树图',
-        img:tree
+        img: tree
       }, {
         id: 'treemap',
         name: '矩形树图',
-        img:treemap
+        img: treemap
       }, {
         id: 'sunburst',
         name: '旭日图',
-        img:sunburst
+        img: sunburst
       }, {
         id: 'map',
         name: '地图',
-        img:map
+        img: map
       }, {
         id: 'graph',
         name: '关系图',
-        img:graph
+        img: graph
       }, {
         id: 'boxplot',
         name: '箱型图',
-        img:boxplot
+        img: boxplot
       }, {
         id: 'parallel',
         name: '平行坐标图',
-        img:parallel
+        img: parallel
       }, {
         id: 'sankey',
         name: '桑基图',
-        img:sankey
+        img: sankey
       }, {
         id: 'themeRiver',
         name: '主题河流图',
-        img:themeRiver
+        img: themeRiver
       }
     ]
   
@@ -120,16 +120,16 @@ class Echarts extends Taro.Component<{}>{
   
     const open = (chart: any) => {
       Taro.navigateTo({
-        url:`/packageA/pages/echarts/chart/index?type=${chart.id}&title=${chart.name}`
+        url: `/packageA/pages/echarts/chart/index?type=${chart.id}&title=${chart.name}`
       })
     }
     return (
-      <View className="panel">
+      <View className='panel'>
         {
           charts.map((chart: any) => {
             return (
-              <View className="chart-with-img">
-                <Image src={chart.img} mode="aspectFit" onClick={()=>open(chart)} ></Image>
+              <View className='chart-with-img'>
+                <Image src={chart.img} mode='aspectFit' onClick={() => open(chart)} ></Image>
                 {chart.name}
               </View>
             )

@@ -1,6 +1,6 @@
-var option = {
-  backgroundColor: "#ffffff",
-  color: ["#37A2DA", "#FF9F7F"],
+const option = {
+  backgroundColor: '#ffffff',
+  color: ['#37A2DA', '#FF9F7F'],
   tooltip: {},
   xAxis: {
     show: false

@@ -46,7 +46,7 @@ const option = {
     left: 'center',
     bottom: 10,
     inRange: {
-      color: ["#37A2DA", "#32C5E9", "#67E0E3", "#91F2DE", "#FFDB5C", "#FF9F7F"],
+      color: ['#37A2DA', '#32C5E9', '#67E0E3', '#91F2DE', '#FFDB5C', '#FF9F7F'],
     }
   },
   series: [{
